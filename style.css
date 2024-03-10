@@ -1,0 +1,127 @@
+/* Existing styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allow vertical scrolling */
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+}
+
+/* New Background Image Container with Fade Effect */
+#aiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('ai-background.jpg'); /* Update with your image URL */
+  background-size: cover;
+  background-position: center;
+  /* animation: fadeBackground 30s infinite; */
+  z-index: -1; /* Ensures it's behind all other content */
+}
+
+@keyframes fadeBackground {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Adjusted styles to ensure other content is above the background */
+header, section, canvas {
+  position: relative;
+  z-index: 1; /* Make sure content is above the background */
+}
+
+/* Your existing CSS for elements like the header, sections, and the canvas */
+
+/* Updated CSS for the header */
+header {
+  text-align: center; /* Centers the text horizontally */
+  padding: 20px;
+  width: 100%; /* Ensures the header spans the full width of the viewport */
+  box-sizing: border-box; /* Makes sure padding does not affect the total width */
+}
+
+/* If you want to vertically center the text within the entire header area */
+header h1, header p {
+  font-size: 26px;
+  margin: 0; /* Removes default margin */
+  padding: 10px 0; /* Adds some padding for spacing */
+  color: #fff;
+}
+
+#profile-photo {
+  width: 200px; /* Adjust based on your preference */
+  height: 200px; /* Adjust based on your preference */
+  border-radius: 50%; /* Creates a circle shape */
+  margin-bottom: 20px; /* Adds some space between the photo and the name */
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adjust the space between the image and the paragraph */
+}
+
+.header-small-img {
+  width: 10%; /* Adjust based on your image size */
+  height: 50px; /* Adjust to maintain aspect ratio */
+  object-fit: cover; /* Adjust as needed to cover the area without stretching */
+}
+
+@media (min-width: 768px) {
+  header {
+      flex-direction: row; /* Align items in a row for larger screens */
+      justify-content: space-around; /* Distribute space around items */
+  }
+
+  #profile-photo {
+      margin-bottom: 0; /* Remove bottom margin for larger screens */
+      margin-right: 20px; /* Add some space to the right of the photo */
+  }
+}
+
+section {
+  position: relative;
+  width: 100%; /* Full width of the section */
+  display: flex;
+  justify-content: center; /* Center the text box horizontally */
+  align-items: center; /* Center the text box vertically */
+  margin: 20px 0; /* Add some margin for spacing between sections */
+}
+
+.text-box {
+  max-width: 80%; /* Maximum width of the text box */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px; /* Padding for text content */
+  border-radius: 10px; /* Rounded corners for the text box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* You might want to adjust the font size for headings and paragraphs within the text box for better readability */
+.text-box h2 {
+  font-size: 24px; /* Example font size for headings */
+  color: #3b3a3a; /* Dark color for contrast */
+}
+
+.text-box h3 {
+  font-size: 17px;
+  font-weight: bold; 
+  color: #3f2e2e;
+}
+
+.text-box p {
+  font-size: 16px; /* Example font size for paragraphs */
+  color: #666; /* Lighter color for the text */
+  line-height: 1.6; /* Improved line spacing for readability */
+  margin-top: 10x;
+}
+
